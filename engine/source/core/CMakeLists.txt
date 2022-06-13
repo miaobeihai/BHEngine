@@ -74,7 +74,13 @@ target_include_directories(
 
 target_include_directories(
   ${TARGET_NAME} 
-  PUBLIC $<BUILD_INTERFACE:${ENGINE_ROOT_DIR}/source/core/Graphics/RHI/VulkanRHI>
+  PUBLIC $<BUILD_INTERFACE:${ENGINE_ROOT_DIR}/source/core/graphics/RHI/VulkanRHI>
+  $<INSTALL_INTERFACE:include/${TARGET_NAME}-${PROJECT_VERSION}>
+)
+
+target_include_directories(
+  ${TARGET_NAME} 
+  PUBLIC $<BUILD_INTERFACE:${ENGINE_ROOT_DIR}/source/core/runtime>
   $<INSTALL_INTERFACE:include/${TARGET_NAME}-${PROJECT_VERSION}>
 )
 
